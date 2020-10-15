@@ -13,6 +13,7 @@ class UserController extends Controller
     public function addToken(Request $request) {
         $user = User::findOrFail($request->id);
         $user->git_token = Crypt::encryptString($request->git_token);
+        $user->git_username = $request->git_username;
         $user->save();
         return response()->json('TOKEN SAVED');
     }
@@ -23,8 +24,11 @@ class UserController extends Controller
         if ($user->git_token != "") {
             $git_token = Crypt::decryptString($user->git_token);
             $response['git_token'] = $git_token;
+            $response['git_username'] = $user->git_username;
         }
         return response()->json($response);
     }
+
+
 
 }
