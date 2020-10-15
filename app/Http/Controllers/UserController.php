@@ -19,8 +19,12 @@ class UserController extends Controller
 
     public function showToken($id) {
         $user = User::findOrFail($id);
-        $response = Crypt::decryptString($user->git_token);
-        return response()->json(array('git_token' => $response));
+        $response = array();
+        if ($user->git_token != "") {
+            $git_token = Crypt::decryptString($user->git_token);
+            $response['git_token'] = $git_token;
+        }
+        return response()->json($response);
     }
 
 }

@@ -10919,3 +10919,6 @@ a.text-dark:focus {
     display: flex;
     justify-content: space-between;
 }
+#no_token {
+    display: none;
+}
