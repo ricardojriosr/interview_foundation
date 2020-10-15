@@ -20,9 +20,7 @@
                         <button class="btn btn-primary" id="submit_starred_repos_user">Submit</button>
                     </div>
 
-                    <div class="row" id="git_results">
-
-                    </div>
+                    <div class="row" id="git_results"></div>
 
                 </div>
             </div>
