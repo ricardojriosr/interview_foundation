@@ -10909,3 +10909,13 @@ a.text-dark:focus {
   }
 }
 
+#alert_msg {
+    display: none;
+}
+.full-width {
+    width: 100%;
+}
+.item-flex {
+    display: flex;
+    justify-content: space-between;
+}
